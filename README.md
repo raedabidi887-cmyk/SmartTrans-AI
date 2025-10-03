@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+# SmartTrans-AI
+Application locale pour traduire automatiquement des documents. Permet d’uploader des fichiers (PDF, DOCX, TXT), détecte la langue source, traduit vers la langue souhaitée et permet de télécharger le fichier traduit.
+
+
+>>>>>>> f00caf4e53cf6b7b8328b758a45663e654288332
 # SmartTrans AI
 
 Application locale de traduction automatique de documents.
@@ -64,4 +71,8 @@ SmartTransAI/
 - **Lecture PDF :** PyMuPDF
 - **Lecture DOCX :** python-docx
 - **Génération PDF :** FPDF2
+<<<<<<< HEAD
 - **Interface :** HTML + Bootstrap + Jinja2 
+=======
+- **Interface :** HTML + Bootstrap + Jinja2 
+>>>>>>> f00caf4e53cf6b7b8328b758a45663e654288332
