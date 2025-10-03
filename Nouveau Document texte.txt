@@ -1,0 +1,80 @@
+Cahier des Charges – SmartTrans AI (version locale, sans authentification)
+🎯 Objectif
+Créer une application locale permettant de :
+
+Uploader un fichier (PDF, DOCX, TXT)
+
+Détecter automatiquement la langue du contenu
+
+Choisir une langue de destination
+
+Traduire le contenu
+
+Télécharger le fichier traduit
+
+🛠️ Technologies recommandées
+Backend (Python)
+Tâche	Outils
+Framework	FastAPI (léger, rapide pour API locales)
+Détection langue	langdetect ou langid
+Traduction	googletrans (libre) ou GPT/DeepL API
+Lecture fichiers	PyMuPDF (PDF), python-docx, openpyxl ou textract
+Génération fichiers	python-docx ou fpdf (pour PDF)
+
+Frontend
+Choix	Détails
+Option 1	HTML simple + JS + Bootstrap (intégré dans FastAPI via templates Jinja2)
+Option 2	App React.js (communique avec FastAPI)
+
+Stockage
+Aucun stockage permanent requis
+
+Traitement temporaire en mémoire ou dans un dossier temp/
+
+📁 Formats pris en charge
+.pdf
+
+.docx
+
+.txt
+
+🧩 Fonctionnalités (simplifiées)
+Upload fichier depuis l’interface
+
+Analyse et détection de la langue automatiquement
+
+Choix de langue cible via menu déroulant
+
+Traduction du texte
+
+Téléchargement du fichier traduit
+
+🖥️ Architecture projet (locale)
+Copier
+Modifier
+SmartTransAI/
+│
+├── backend/
+│   ├── main.py                # FastAPI app
+│   ├── utils/
+│   │   ├── detect_language.py
+│   │   ├── translate.py
+│   │   ├── file_reader.py
+│   │   └── file_writer.py
+│   └── templates/
+│       └── index.html         # Interface utilisateur simple (Jinja2)
+│
+├── temp/                      # Stockage temporaire fichiers uploadés/traduits
+├── requirements.txt
+└── README.md
+🧪 Étapes de fonctionnement
+Utilisateur : sélectionne un fichier → clique "Analyser"
+
+Backend : lit le fichier → détecte la langue → retourne "Langue : Arabe"
+
+Utilisateur : sélectionne "Français" comme langue cible
+
+Backend : traduit le contenu → génère un fichier .pdf ou .docx
+
+Utilisateur : clique "Télécharger fichier traduit"
+
